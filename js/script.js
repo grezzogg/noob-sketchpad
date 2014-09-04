@@ -1,15 +1,15 @@
 //runs the main function when the DOM is fully loaded
-$(document).ready(main("lol"));
+$(document).ready(main());
 
 //main function
 function main () {
   
   //init the greid for the first time (black)
-  initGrid("normal");
+  initGrid('normal');
 }
 
+
 function initGrid(type) {
-  $('.grid').append('<div class="cell">lol it worked</div>');
-  console.log('sad face :(')
+$('.grid').append('<p>hola</p>');
 }
 
