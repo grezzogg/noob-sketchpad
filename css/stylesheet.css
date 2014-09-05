@@ -17,13 +17,24 @@
 
 .grid {
   margin: 20px auto;
-  height: 300px;
   width: 300px;
-  border: 1px solid #000;
 }
 
  .cell {
-   width: 20px;
-   height: 20px;
-   background-color: #1779db;
+   background-color: #fff;
+   margin: 0px;
+   padding: 0px;
+   float: left;
+   border: 1px solid #000;
  }
+
+.nav-bar ul li {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+a {
+  text-decoration: none; 
+  color: #000;
+}
