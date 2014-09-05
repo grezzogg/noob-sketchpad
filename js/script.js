@@ -13,10 +13,6 @@ function initGrid(type) {
 	$('.grid').append('<div class="cell"></div>');
 }
 
-//
-//    $(document).ready(test);
-//
-//function test(){
-//    $('.grid').append('hola');
-//  console.log(':(');
-//}
+/*first, divide the grid width in px between
+the amount of grids specified. do the same with
+the vertical part of the grid
