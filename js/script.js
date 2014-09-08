@@ -26,10 +26,10 @@ function main () {
     doTrailSketch();
   });
   
-  //if colors button is opacity
+  //if opacity button is clicked
   $('.button-opacity').click(function () {
     initGrid(x, y, height, width);
-    doTrailSketch();
+    doOpacitySketch();
   });
   
   //if colors button is clicked
@@ -70,12 +70,15 @@ function initGrid(x, y, height, width) {
   $('.cell').css({"height": sizeY - 2, "width": sizeX - 2});
 }
 
+//changes the .cell background color to black
 function doNormalSketch() {
  $('.cell').hover(function () {
    $(this).css({"background-color": "#000"});
  });
 }
 
+//changes the .cell opacity to 1 on hover
+//changes the .cell opacity to 2 off hover
 function doTrailSketch() {
    $('.cell').hover(function () {
      $(this).fadeTo('fast', 1);
@@ -85,7 +88,15 @@ function doTrailSketch() {
    });
 }
 
+//adds 0.25 to .cell current opacity
 function doOpacitySketch() {
+  $('.cell').hover(function () {
+    var currentOpacity = $(this).css("opacity");
+    var newOpacity     = currentOpacity - 0.25;
+    console.log(currentOpacity);
+    console.log(newOpacity);
+    $('.cell').css("opacity", newOpacity);
+  });
 }
 
 function doColorsSketch() {
