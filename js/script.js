@@ -4,10 +4,10 @@ $(document).ready(main);
 //main function
 function main () {
   
-  var x      = 20;
-  var y      = 20;
+  var x      = 25;
+  var y      = 25;
   var height = 300;
-  var width  = 600;
+  var width  = 300;
   //inits the greid for the first time (black)
   initGrid(x, y, height, width);
   
@@ -62,7 +62,7 @@ function initGrid(x, y, height, width) {
   //amount of cells
   for ( i = 0; i < cellAmount; i++) {
     console.log('grid created');
-  	$('.grid').append('<div class="cell"></div>');
+  	$('.grid').append('<div class="cell-container"><div class="cell"></div></div>');
   }
   
   //resizes the cells to correctly
@@ -82,10 +82,6 @@ function doTrailSketch() {
      $(this).css({"background-color": "#000"});
    }, function () {
      $(this).fadeTo('fast', 0);
-//     $(this).css({"background-color": "#fff", "opacity": "1"});
-     //way to make border opacity independant
-     //of the content
-     //maybe make a div container
    });
 }
 
