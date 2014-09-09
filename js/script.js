@@ -29,6 +29,13 @@ function main () {
   //if opacity button is clicked
   $('.button-opacity').click(function () {
     initGrid(x, y, height, width);
+    
+    //set the cell background color to black
+    //and the opacity to 0
+    //this way we can gradually increase opacity
+    //to slowly turn the cell black
+    $('.cell').css({"background-color": "#000"});
+    $('.cell').css({"opacity": "0"});
     doOpacitySketch();
   });
   
@@ -92,12 +99,25 @@ function doTrailSketch() {
 function doOpacitySketch() {
   $('.cell').hover(function () {
     var currentOpacity = $(this).css("opacity");
-    var newOpacity     = currentOpacity - 0.25;
+    var newOpacity     = parseFloat(currentOpacity) + 0.15;
     console.log(currentOpacity);
     console.log(newOpacity);
-    $('.cell').css("opacity", newOpacity);
+    $(this).css({"opacity": newOpacity});
   });
 }
 
-function doColorsSketch() {
+function getRandomHexColor() {
+  var aux = "01234567890ABCDE".split();
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += aux[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
+//
+//function doColorsSketch() {
+//  $('.cell').hover(function () {
+//    $(this).css({"background-color": getRandomHexColor()});
+//}
+//
+getRandomHexColor();
