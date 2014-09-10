@@ -107,17 +107,16 @@ function doOpacitySketch() {
 }
 
 function getRandomHexColor() {
-  var aux = "01234567890ABCDE".split();
+  var aux = "01234567890ABCDE".split('');
   var color = "#";
   for (var i = 0; i < 6; i++) {
     color += aux[Math.floor(Math.random() * 16)];
   }
   return color;
 }
-//
-//function doColorsSketch() {
-//  $('.cell').hover(function () {
-//    $(this).css({"background-color": getRandomHexColor()});
-//}
-//
-getRandomHexColor();
+
+function doColorsSketch() {
+  $('.cell').hover(function () {
+    $(this).css({"background-color": getRandomHexColor()});
+  });
+}
